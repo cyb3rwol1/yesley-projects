@@ -1,5 +1,6 @@
 const express = require('express');
 const morgan = require('morgan');
+const cors = require('cors');
 const app = express();
 
 const { mongoose } = require('./database');
@@ -13,6 +14,8 @@ app.set('port',process.env.PORT || _PORT);
 app.use(morgan('dev')); 
     // Para identificar JSON nas requisições
 app.use(express.json());
+    //Liberar acesso de outros servidores
+app.use(cors({origin:'http://localhost:4200'}));
 
 //Routes
 app.use('/',require('./routes/usuario.routes.js'));

@@ -44,7 +44,7 @@ usuarioController.deleteUsuario = async (req, res) => {
     if(!usuario) res.status(400).json(M.s0002());
 
     await Usuario.findOneAndDelete({ "_id": id });
-    res.status(200).json(M.s0003);
+    res.status(200).json(M.s0005());
 }
 
 module.exports = usuarioController;
