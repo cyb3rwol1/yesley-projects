@@ -1,18 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
-import { UsuariosService } from '../../services/usuarios.service'
+import { UsuariosService } from '../../services/usuario.service'
 import { Usuario } from '../../models/usuario';
 
 declare var M: any;
 
 @Component({
-  selector: 'app-usuarios',
-  templateUrl: './usuarios.component.html',
-  styleUrls: ['./usuarios.component.css'],
+  selector: 'app-usuario',
+  templateUrl: './usuario.component.html',
+  styleUrls: ['./usuario.component.css'],
   providers: [UsuariosService]
 })
-export class UsuariosComponent implements OnInit {
+export class UsuarioComponent implements OnInit {
 
   constructor(private usuarioService: UsuariosService) { }
 
