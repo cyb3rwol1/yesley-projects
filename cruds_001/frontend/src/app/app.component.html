@@ -1,6 +1,27 @@
-<nav class="nav-wrapper blue">
-  <a routerLink="/usuario">Usuário</a>
-  <a routerLink="/papel">Papel</a>
+
+<nav class="white" role="navigation">
+  <div class="nav-wrapper container">
+    <a id="logo-container" href="#" class="brand-logo">System</a>
+
+    <ul class="right hide-on-med-and-down">
+      <li><a routerLink="/usuario">Usuário</a></li>
+      <li><a routerLink="/papel">Papel</a></li>
+    </ul>
+
+    <ul id="nav-mobile" class="sidenav">
+      <li><a routerLink="/usuario">Usuário</a></li>
+      <li><a routerLink="/papel">Papel</a></li>
+    </ul>
+
+    <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+  </div>
 </nav>
+
+<!--<nav class="nav-wrapper blue">-->
+  <!--<a routerLink="/usuario">Usuário</a>-->
+  <!--<a routerLink="/papel">Papel</a>-->
+<!--</nav>-->
 <h1>{{title}}</h1>
 <router-outlet></router-outlet>
+ 
+
