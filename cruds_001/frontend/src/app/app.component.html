@@ -1,27 +1,21 @@
+<nav>
+  <ul id="slide-out" class="sidenav">
+    <li><div class="user-view">
+      <div class="background">
+        <!--<img src="images/office.jpg">-->
+      </div>
+      <!--<a href="#user"><img class="circle" src="images/yuna.jpg"></a>-->
+      <a href="#name"><span class="white-text name">John Doe</span></a>
+      <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
+    </div></li>
+    <li><a routerLink="/usuario">Usuário</a></li>
+    <li><a routerLink="/papel">Papel</a></li>
+    <!--<li><div class="divider"></div></li>-->
+  </ul>
 
-<nav class="white" role="navigation">
-  <div class="nav-wrapper container">
-    <a id="logo-container" href="#" class="brand-logo">System</a>
-
-    <ul class="right hide-on-med-and-down">
-      <li><a routerLink="/usuario">Usuário</a></li>
-      <li><a routerLink="/papel">Papel</a></li>
-    </ul>
-
-    <ul id="nav-mobile" class="sidenav">
-      <li><a routerLink="/usuario">Usuário</a></li>
-      <li><a routerLink="/papel">Papel</a></li>
-    </ul>
-
-    <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-  </div>
+  <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 </nav>
 
-<!--<nav class="nav-wrapper blue">-->
-  <!--<a routerLink="/usuario">Usuário</a>-->
-  <!--<a routerLink="/papel">Papel</a>-->
-<!--</nav>-->
 <h1>{{title}}</h1>
-<router-outlet></router-outlet>
- 
 
+<router-outlet></router-outlet>
