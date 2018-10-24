@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7a400e94-7687-47ae-90d9-c16bda3a7cdb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/frontend/src/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/app-routing.module.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app-routing.module.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/js/init.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/js/init.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/js/materialize.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/usuario.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/usuario.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/usuario.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/usuario.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,20 +15,20 @@
     <session id="-1707636375">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="6" />
+          <entry key="project.closed" value="7" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.20" value="1" />
           <entry key="project.open.time.4" value="2" />
-          <entry key="project.open.time.5" value="1" />
+          <entry key="project.open.time.5" value="2" />
           <entry key="project.open.time.7" value="1" />
-          <entry key="project.opened" value="6" />
+          <entry key="project.opened" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="59" />
           <entry key="html" value="122" />
-          <entry key="js" value="35" />
+          <entry key="js" value="137" />
           <entry key="ts" value="1" />
         </counts>
       </usages-collector>
@@ -40,7 +36,7 @@
         <counts>
           <entry key="CSS" value="59" />
           <entry key="HTML" value="122" />
-          <entry key="JavaScript" value="35" />
+          <entry key="JavaScript" value="137" />
           <entry key="TypoScript File" value="1" />
         </counts>
       </usages-collector>
@@ -50,8 +46,8 @@
           <entry key="css" value="1" />
           <entry key="gitignore" value="1" />
           <entry key="html" value="3" />
-          <entry key="js" value="4" />
-          <entry key="json" value="9" />
+          <entry key="js" value="7" />
+          <entry key="json" value="11" />
           <entry key="ts" value="6" />
         </counts>
       </usages-collector>
@@ -59,8 +55,8 @@
         <counts>
           <entry key="CSS" value="1" />
           <entry key="HTML" value="3" />
-          <entry key="JSON" value="9" />
-          <entry key="JavaScript" value="4" />
+          <entry key="JSON" value="11" />
+          <entry key="JavaScript" value="7" />
           <entry key="PLAIN_TEXT" value="5" />
           <entry key="TypoScript File" value="3" />
         </counts>
@@ -72,29 +68,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/package.json">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/models/usuario.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="9" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/frontend/src/index.html">
+        <entry file="file://$PROJECT_DIR$/server/controllers/usuario.controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" column="91" selection-start-line="22" selection-start-column="80" selection-end-line="22" selection-end-column="91" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/src/js/init.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="15" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="15" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/src/app/app.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" selection-start-line="17" selection-end-line="17" />
+            <state relative-caret-position="476">
+              <caret line="34" column="30" lean-forward="true" selection-start-line="34" selection-start-column="30" selection-end-line="34" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -119,6 +111,8 @@
         <option value="$PROJECT_DIR$/frontend/src/js/init.js" />
         <option value="$PROJECT_DIR$/frontend/src/app/app-routing.module.spec.ts" />
         <option value="$PROJECT_DIR$/frontend/src/app/app.component.html" />
+        <option value="$PROJECT_DIR$/server/models/usuario.js" />
+        <option value="$PROJECT_DIR$/server/controllers/usuario.controller.js" />
       </list>
     </option>
   </component>
@@ -148,6 +142,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -164,28 +159,24 @@
             <path>
               <item name="cruds_001" type="b2602c69:ProjectViewProjectNode" />
               <item name="cruds_001" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="cruds_001" type="b2602c69:ProjectViewProjectNode" />
               <item name="cruds_001" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="cruds_001" type="b2602c69:ProjectViewProjectNode" />
               <item name="cruds_001" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -283,11 +274,6 @@
         <state relative-caret-position="-172" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-348" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/angular.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1819">
@@ -338,6 +324,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/server/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="19" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/src/js/init.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -349,6 +342,26 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="22" column="91" selection-start-line="22" selection-start-column="80" selection-end-line="22" selection-end-column="91" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/database.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/package.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/models/usuario.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="9" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/controllers/usuario.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="34" column="30" lean-forward="true" selection-start-line="34" selection-start-column="30" selection-end-line="34" selection-end-column="30" />
         </state>
       </provider>
     </entry>

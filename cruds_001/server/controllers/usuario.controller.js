@@ -1,37 +1,37 @@
 const Usuario = require('../models/usuario');
-const M = require('../utils/mensageria.utils');
+const Mensageria = require('../utils/mensageria.utils');
 
 const usuarioController = {};
 
 usuarioController.getUsuarios = async (req, res) => {
     const id = req.query.id;
-    const nome = req.query.nome;
+    //const nome = req.query.nome;
 
-    if (id) {
-        const usuario = await Usuario.findById(id);
-        res.status(200).json(usuario);
-    } else {
-        const usuarios = await Usuario.find();
-        res.status(200).json(usuarios);
-    }
+    let retorno = id ? await Usuario.findById(id) : await Usuario.find();
+    retorno != "" ? res.status(200).json(retorno) : res.status(200).json(Mensageria.s0000());
 }
 
 usuarioController.createUsuario = async (req, res) => {
     const usuario = new Usuario(req.body);
-    await usuario.save();
-    res.status(201).json(M.s0003());
+
+    await usuario.save((err) => {
+        if (err) res.status(400).json({ "Erros:": err.errors });
+    });
+
+    res.status(201).json(Mensageria.s0003());
 }
 
 usuarioController.alterUsuario = async (req, res) => {
     const { id } = req.params;
     const usuario = {
         nome: req.body.nome,
-        idade: req.body.idade
+        login: req.body.login,
+        senha: req.body.senha
     };
-    
+
     await Usuario.findOneAndUpdate({ "_id": id }, { $set: usuario }, { new: true }, (err) => {
         if (err) res.status(400).json({ "erro:": err });
-        res.status(200).json(M.s0003());
+        res.status(200).json(Mensageria.s0004());
     });
 
 }
@@ -41,10 +41,10 @@ usuarioController.deleteUsuario = async (req, res) => {
 
     const usuario = await Usuario.findById(id);
 
-    if(!usuario) res.status(400).json(M.s0002());
+    if (!usuario) res.status(400).json(Mensageria.s0002());
 
     await Usuario.findOneAndDelete({ "_id": id });
-    res.status(200).json(M.s0005());
+    res.status(200).json(Mensageria.s0005());
 }
 
 module.exports = usuarioController;
