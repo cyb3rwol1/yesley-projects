@@ -11,7 +11,7 @@ import { PapelComponent } from './components/papel/papel.component';
 
 //Angular/Material
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatMenuModule } from '@angular/material';
+import { MatButtonModule, MatMenuModule, MatToolbarModule } from '@angular/material';
 
 
 @NgModule({
@@ -26,7 +26,9 @@ import { MatMenuModule } from '@angular/material';
     HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatMenuModule
+    MatMenuModule,
+    MatButtonModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,21 +1,14 @@
-<nav>
-  <ul id="slide-out" class="sidenav">
-    <li><div class="user-view">
-      <div class="background">
-        <!--<img src="images/office.jpg">-->
-      </div>
-      <!--<a href="#user"><img class="circle" src="images/yuna.jpg"></a>-->
-      <a href="#name"><span class="white-text name">John Doe</span></a>
-      <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
-    </div></li>
-    <li><a routerLink="/usuario">Usuário</a></li>
-    <li><a routerLink="/papel">Papel</a></li>
-    <!--<li><div class="divider"></div></li>-->
-  </ul>
+<mat-toolbar color="primary">
 
-  <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-</nav>
+  <button mat-icon-button [matMenuTriggerFor]="menu">
+    <i class="material-icons">menu</i>
+  </button>
 
-<h1>{{title}}</h1>
+  <mat-menu #menu="matMenu">
+      <button mat-menu-item>Usuário</button>
+    <!-- <button mat-menu-item><a routerLink="/usuario">Usuário</a></button>
+    <button mat-menu-item><a routerLink="/papel">Papel</a></button> -->
+  </mat-menu>
 
+</mat-toolbar>
 <router-outlet></router-outlet>
