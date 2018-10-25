@@ -1,12 +1,15 @@
 export class Usuario {
-
-    constructor(_id = '', nome='',idade=0) {
-        this._id = _id;
-        this.nome = nome;
-        this.idade = idade;
-     }
-
     _id: string;
     nome: string;
-    idade: number;
+    login: string;
+    senha: string;
+    ativo: boolean;
+    
+    constructor(_id = '', nome = '', login = '', senha = '', ativo = true) {
+        this._id = _id;
+        this.nome = nome;
+        this.login = this.login;
+        this.senha = this.senha;
+        this.ativo = ativo;
+    }
 }

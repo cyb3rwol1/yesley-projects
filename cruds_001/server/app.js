@@ -7,24 +7,24 @@ const { mongoose } = require('./database');
 
 //Settings
 const _PORT = 3000;
-app.set('port',process.env.PORT || _PORT);
+app.set('port', process.env.PORT || _PORT);
 
 //Middlewares
-    // Apresenta msg no console quando executado o dev
-app.use(morgan('dev')); 
-    // Para identificar JSON nas requisições
+// Apresenta msg no console quando executado o dev
+app.use(morgan('dev'));
+// Para identificar JSON nas requisições
 app.use(express.json());
-    //Liberar acesso de outros servidores
-app.use(cors({origin:'http://localhost:4200'}));
+// Liberar acesso de outros servidores
+app.use(cors({ origin: 'http://localhost:4200' }));
 
 //Routes
-app.use('/',require('./routes/usuario.routes.js'));
+app.use('/', require('./routes/usuario.routes.js'));
 
-app.get('/',(req,res) => {
+app.get('/', (req, res) => {
     res.status(200).json({ mensagem: "API OK! =D" });
 });
 
 //Start Server
-app.listen(app.get('port'), () =>{
+app.listen(app.get('port'), () => {
     console.log('Server on port:' + app.get('port'));
 });
