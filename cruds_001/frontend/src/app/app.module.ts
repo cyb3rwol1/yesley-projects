@@ -9,6 +9,9 @@ import { UsuarioComponent } from './components/usuario/usuario.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { PapelComponent } from './components/papel/papel.component';
 
+//Angular/Material
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatMenuModule } from '@angular/material';
 
 
 @NgModule({
@@ -21,7 +24,9 @@ import { PapelComponent } from './components/papel/papel.component';
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]
