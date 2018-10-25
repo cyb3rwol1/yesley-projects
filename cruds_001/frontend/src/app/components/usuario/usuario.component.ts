@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import {Component, OnInit} from '@angular/core';
+import {NgForm} from '@angular/forms';
 
-import { UsuariosService } from '../../services/usuario.service'
-import { Usuario } from '../../models/usuario';
+import {UsuariosService} from '../../services/usuario.service';
+import {Usuario} from '../../models/usuario';
 
-declare var M: any;
+declare let M: any;
 
 @Component({
   selector: 'app-usuario',
@@ -14,14 +14,14 @@ declare var M: any;
 })
 export class UsuarioComponent implements OnInit {
 
-  constructor(private usuarioService: UsuariosService) { }
+  constructor(private usuarioService: UsuariosService) {
+  }
 
   ngOnInit() {
     this.getUsuarios();
   }
 
   postOrPutUsuario(form?: NgForm) {
-    console.log(form.value._id);
     if (form.value._id) {
       this.putUsuario(form);
     } else {
@@ -33,11 +33,11 @@ export class UsuarioComponent implements OnInit {
     this.usuarioService.postUsuario(form.value)
       .subscribe(res => {
         this.resetForm(form);
-        M.toast({ html: res["mensagem"] });
+        M.toast({html: res['mensagem']});
         this.getUsuarios();
       });
   }
-  
+
   getUsuarios() {
     this.usuarioService.getUsuarios()
       .subscribe(res => {
@@ -48,14 +48,14 @@ export class UsuarioComponent implements OnInit {
   putUsuario(form?: NgForm) {
     this.usuarioService.putUsuario(form.value).subscribe(res => {
       this.resetForm(form);
-      M.toast({ html: res["mensagem"] });
+      M.toast({html: res['mensagem']});
       this.getUsuarios();
     });
   }
 
-  deleteEmployee(_id: string){
+  deleteEmployee(_id: string) {
     this.usuarioService.deleteUsuario(_id).subscribe(res => {
-      M.toast({ html: res["mensagem"] });
+      M.toast({html: res['mensagem']});
       this.getUsuarios();
     });
   }

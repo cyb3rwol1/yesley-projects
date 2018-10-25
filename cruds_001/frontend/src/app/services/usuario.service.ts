@@ -6,21 +6,20 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class UsuariosService {
-  
   readonly URL_API = 'http://localhost:3000/usuarios';
-  selectUsuario: Usuario;  
+  selectUsuario: Usuario;
   usuarios: Usuario[];
 
   constructor(private http: HttpClient) {
     this.selectUsuario = new Usuario;
   }
-  
+
   getUsuarios() {
     return this.http.get(this.URL_API);
   }
 
   postUsuario(usuario: Usuario) {
-    delete usuario["_id"];
+    delete usuario['_id'];
     return this.http.post(this.URL_API, usuario);
   }
 

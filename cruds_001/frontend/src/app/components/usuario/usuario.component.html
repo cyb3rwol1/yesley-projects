@@ -1,53 +1,27 @@
-<div class="container">
-  <div class="row">
-    <div class="col s5">
-      <div class="card">
-        <div class="card-content">
-          <form #usuarioForm="ngForm" (ngSubmit)="postOrPutUsuario(usuarioForm)">
-            <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="usuarioService.selectUsuario._id">
-            <div class="row">
-              <div class="input-field col s12">
-                <input type="text" name="nome" #nome="ngModel" [(ngModel)]="usuarioService.selectUsuario.nome" placeholder="Digite seu nome">
-              </div>
-              <div class="input-field col s12">
-                <input type="number" name="idade" #idade="ngModel" [(ngModel)]="usuarioService.selectUsuario.idade" placeholder="Digite sua idade">
-              </div>
-              <div class="card-actions">
-                <div class="input-field col s12">
-                  <a class="btn red lighten-2 waves-effect waves-light" (click)="resetForm(usuarioForm)">
-                    Limpar <i class="material-icons right">clear_all</i>
-                  </a>
-                  <button class="btn blue lighten-1 right waves-effect waves-light" type="Salvar" name="action">
-                    Enviar <i class="material-icons right">send</i>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-    <div class="col s7">
-      <table>
-        <thead>
-          <th>Nome</th>
-          <th>Idade</th>
-        </thead>
-        <tbody>
-          <tr *ngFor="let usuario of usuarioService.usuarios">
-            <td>{{usuario.nome}}</td>
-            <td>{{usuario.idade}}</td>
-            <td>
-              <a (click)="setUsuario(usuario)">
-                <i class="material-icons">edit</i>
-              </a>
-              <a (click)="deleteEmployee(usuario._id)">
-                <i class="material-icons">delete</i>
-              </a>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+<mat-card>
+  <div class="example-container">
+    <mat-form-field>
+      <input matInput placeholder="Nome">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Login">
+    </mat-form-field>
   </div>
-</div>
+</mat-card>
+<mat-card ngClass="lighten-2">
+  <table class="mat-elevation-z8">
+    <tr>
+      <th>Ação</th>
+      <th>Nome</th>
+      <th>Login</th>
+    </tr>
+    <tr *ngFor="let usuario of usuarioService.usuarios">
+      <td>
+        <button mat-menu-item (click)="setUsuario(usuario)"><i class="material-icons">edit</i></button>
+        <button mat-menu-item (click)="deleteEmployee(usuario._id)"><i class="material-icons">delete</i></button>
+      </td>
+      <td>{{usuario.nome}}</td>
+      <td>{{usuario.login}}</td>
+    </tr>
+  </table>
+</mat-card>

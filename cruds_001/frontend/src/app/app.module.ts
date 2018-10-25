@@ -1,17 +1,18 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 
-import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http'
+import {FormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http'
 
-import { AppComponent } from './app.component';
-import { UsuarioComponent } from './components/usuario/usuario.component';
-import { AppRoutingModule } from './/app-routing.module';
-import { PapelComponent } from './components/papel/papel.component';
+import {AppComponent} from './app.component';
+import {UsuarioComponent} from './components/usuario/usuario.component';
+import {AppRoutingModule} from './/app-routing.module';
+import {PapelComponent} from './components/papel/papel.component';
 
-//Angular/Material
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule, MatMenuModule, MatToolbarModule } from '@angular/material';
+/*  Angular/Material  */
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatButtonModule, MatMenuModule, MatToolbarModule, MatCardModule, MatFormFieldModule, MatInputModule ,
+  MatTableModule} from '@angular/material';
 
 
 @NgModule({
@@ -28,10 +29,15 @@ import { MatButtonModule, MatMenuModule, MatToolbarModule } from '@angular/mater
     BrowserAnimationsModule,
     MatMenuModule,
     MatButtonModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatFormFieldModule,
+    MatCardModule,
+    MatInputModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 
-export class AppModule { }
+export class AppModule {
+}
