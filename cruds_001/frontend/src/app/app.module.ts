@@ -6,14 +6,8 @@ import {HttpClientModule} from '@angular/common/http'
 
 import {AppComponent} from './app.component';
 import {UsuarioComponent} from './components/usuario/usuario.component';
-import {AppRoutingModule} from './/app-routing.module';
+import {AppRoutingModule} from './app-routing.module';
 import {PapelComponent} from './components/papel/papel.component';
-
-/*  Angular/Material  */
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule, MatMenuModule, MatToolbarModule, MatCardModule, MatFormFieldModule, MatInputModule ,
-  MatTableModule} from '@angular/material';
-
 
 @NgModule({
   declarations: [
@@ -25,15 +19,7 @@ import {MatButtonModule, MatMenuModule, MatToolbarModule, MatCardModule, MatForm
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatMenuModule,
-    MatButtonModule,
-    MatToolbarModule,
-    MatFormFieldModule,
-    MatCardModule,
-    MatInputModule,
-    MatTableModule
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
