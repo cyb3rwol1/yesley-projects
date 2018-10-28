@@ -2,45 +2,81 @@ const Usuario = require('../models/usuario');
 const Mensageria = require('../utils/mensageria.utils');
 const MetodosUtil = require('../utils/metodos.utils');
 const Rules = require('../rules/usuario.rules');
+const async = require('async');
 
-const usuarioController = {};
+const controller = {};
 
-usuarioController.getUsuarios = async (req, res) => {
-    try {
-        const allId = MetodosUtil.agrupadorId(req.query.id);
-        let retorno = allId ? await Usuario.find({ _id: { $in: JSON.parse(req.query.id) } }) : await Usuario.find();
-        retorno != "" ? res.status(200).json(retorno) : res.status(200).json(Mensageria.s0000());
-    } catch (e) {
-        console.log(e);
-        res.status(500).json(Mensageria.s9999());
-    }
+controller.getUsuarios = (req, res) => {
+
+    if (!req.query.id)
+        res.status(400).json(Mensageria.s9999());
+
+    Usuario.find({ _id: { $in: JSON.parse(req.query.id) } })
+        .exec()
+        .then((retorno) => {
+            if (retorno == "") {
+                res.status(200).json(Mensageria.s0000())
+            } else {
+                res.status(200).json(retorno)
+            }
+        })
+        .catch((err) => {
+            console.log(err);
+            res.status(400).json(Mensageria.s9999());
+        })
+
 }
 
-usuarioController.createUsuario = async (req, res) => {
-    const usuario = new Usuario(req.body);
+controller.getAllUsuarios = (req, res) => {
 
-    if (!Rules.verificaDuplicidadeDeLogin(usuario.login)) res.status(400).json(Mensageria.s0007("login"));
+    Usuario.find()
+        .exec()
+        .then((retorno) => {
+            if (retorno == "") {
+                res.status(200).json(Mensageria.s0000())
+            } else {
+                res.status(200).json(retorno)
+            }
+        })
+        .catch((err) => {
+            console.log(err);
+            res.status(500).json(Mensageria.s9999());
+        })
 
-    await usuario.save((err) => {
-        if (err) res.status(400).json(Mensageria.s0006(err.errors));
-    });
 }
 
-usuarioController.alterUsuario = async (req, res) => {
+controller.createUsuario = (req, res) => {
+
+    let create = Usuario.create(req.body);
+    create
+        .then(() => {
+            res.status(200).json(Mensageria.s0003());
+        })
+        .catch((err) => {
+            console.error(err);
+            res.status(400).json(Mensageria.s0006(err.errors));
+        });
+}
+
+controller.alterUsuario = (req, res) => {
+
     const { id } = req.params;
-    const usuario = {
-        nome: req.body.nome,
-        login: req.body.login,
-        senha: req.body.senha
-    };
+    let json = MetodosUtil.removeIdAndAtivo(new Usuario(req.body));
 
-    await Usuario.findOneAndUpdate({ "_id": id }, { $set: usuario }, { new: true }, (err) => {
-        if (err) res.status(400).json({ "Erro:": err });
-        res.status(200).json(Mensageria.s0004());
-    });
+    console.log(json);
+
+    Usuario.findOneAndUpdate({ "_id": id }, { $set: json }, { new: true, runValidators: true, context: 'query' })
+        .exec()
+        .then(() => {
+            res.status(200).json(Mensageria.s0004());
+        })
+        .catch((err) => {
+            console.error(err);
+            res.status(400).json(Mensageria.s0006(err.errors));
+        });
 }
 
-usuarioController.deleteUsuario = async (req, res) => {
+controller.deleteUsuario = async (req, res) => {
     const { id } = req.params;
 
     const usuario = await Usuario.findById(id);
@@ -51,4 +87,4 @@ usuarioController.deleteUsuario = async (req, res) => {
     res.status(200).json(Mensageria.s0005());
 }
 
-module.exports = usuarioController;
+module.exports = controller;
