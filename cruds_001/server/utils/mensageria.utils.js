@@ -7,8 +7,9 @@ m.s0002 = () => { return { codigo: "s0002", mensagem: "Entidade não encontrada 
 m.s0003 = () => { return { codigo: "s0003", mensagem: "Criado com sucesso." }; }
 m.s0004 = () => { return { codigo: "s0004", mensagem: "Atualizado com sucesso." }; }
 m.s0005 = () => { return { codigo: "s0005", mensagem: "Removido com Sucesso." }; }
-m.s0006 = (mensagem) => { return { codigo: "s0006", mensagem: "Erro de validação.", "Erros": removerCamposDoSemUsoValidator(mensagem) }; }
-m.s0007 = (campo) => { return alterarNomeCampoDoJson(campo, { codigo: "s0007", mensagem: "query Param obrigatório.", "Erros": { campo: { "message": "Duplicidade não permitida." } } }); }
+m.s0006 = (mensagem) => { return { codigo: "s0006", mensagem: "Erro de validação.", erros: removerCamposDoSemUsoValidator(mensagem) }; }
+m.s0007 = (campo) => { return alterarNomeCampoDoJson(campo, { codigo: "s0007", mensagem: "Query param obrigatório.", erros: { campo: { "message": "Query param obrigatório." } } }); }
+m.s0008 = (err,res) => { return createErrorResponse(err,res); }
 
 //Valores de mensagem FIXAS
 m.f0001 = () => { return "É obrigatório." };
@@ -35,6 +36,15 @@ removerCamposDoSemUsoValidator = (mensagem) => {
 alterarNomeCampoDoJson = (campo, obj) => {
     let json = JSON.stringify([obj]);
     return JSON.parse(json.replace("campo", campo));
+}
+
+createErrorResponse = (err,res) => {
+    
+    // if (err.name == 'CastError') {
+    //     res = { 'status': 400, codigo: "s0008", mensagem: "valor do campo inválido.", erros: { campo: { message: "valor do campo inválido." } } };
+    // }
+
+    return res.status(400).json(s0000());
 }
 
 module.exports = m;

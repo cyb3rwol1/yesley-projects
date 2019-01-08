@@ -8,23 +8,24 @@ const controller = {};
 
 controller.getUsuarios = (req, res) => {
 
-    if (!req.query.id)
-        res.status(400).json(Mensageria.s9999());
-
-    Usuario.find({ _id: { $in: JSON.parse(req.query.id) } })
-        .exec()
-        .then((retorno) => {
-            if (retorno == "") {
-                res.status(200).json(Mensageria.s0000())
-            } else {
-                res.status(200).json(retorno)
-            }
-        })
-        .catch((err) => {
-            console.log(err);
-            res.status(400).json(Mensageria.s9999());
-        })
-
+    if (!req.query.codigo) {
+        res.status(400).json(Mensageria.s0007('codigo'));
+    } else {
+        Usuario.find({ _id: { $in: JSON.parse(req.query.codigo) } })
+            .exec()
+            .then((retorno) => {
+                if (retorno == "") {
+                    res.status(200).json(Mensageria.s0000())
+                } else {
+                    res.status(200).json(retorno)
+                }
+            })
+            .catch((err) => {
+                // console.log(err);
+                Mensageria.s0008(err);
+                console.log(err,res);
+            });
+    }
 }
 
 controller.getAllUsuarios = (req, res) => {
