@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class UsuariosService {
-  readonly URL_API = 'http://localhost:3000/usuarios';
+  readonly URL_API = 'http://localhost:3000/usuario';
   selectUsuario: Usuario;
   usuarios: Usuario[];
 
@@ -15,7 +15,7 @@ export class UsuariosService {
   }
 
   getUsuarios() {
-    return this.http.get(this.URL_API);
+    return this.http.get(this.URL_API + '/all');
   }
 
   postUsuario(usuario: Usuario) {

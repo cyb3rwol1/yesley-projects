@@ -6,3 +6,4 @@
 *.pageflow
 .idea/
 *.iml
+.node_modules/

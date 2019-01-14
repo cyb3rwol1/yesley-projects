@@ -16,7 +16,7 @@ app.use(morgan('[:date[clf]] request :method ":url" status: :status - :response-
 // Para identificar JSON nas requisições
 app.use(express.json());
 // Liberar acesso de outros servidores
-app.use(cors({ origin: 'http://localhost:4500' }));
+app.use(cors({ origin: 'http://localhost:4200' }));
 
 //Routes
 app.use('/', require('./routes/routes.js'));

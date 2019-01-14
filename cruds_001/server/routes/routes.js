@@ -1,7 +1,6 @@
 const router = require('express').Router();
 
-
-const usuarioControl = require('../controllers/usuario.controller');
+const usuarioControl = require('../services/usuario.service');
 const papelControl = require('../controllers/papel.controller');
 
 //Usuario
