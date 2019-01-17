@@ -1,0 +1,11 @@
+.menu-principal{
+    width: 250px;
+    height: 100vh;
+}
+
+@media only screen and (max-width: 400px) {
+    .menu-principal{
+        width: 75%;
+        height: 100vh;
+    }
+  }
