@@ -8,7 +8,7 @@ var CONTROLLER_MAP = {
     83: 'down'
 };
 
-const PLAYER_SPEED_MOVE = 3;
+const PLAYER_SPEED_MOVE = 3 * 100 ;
 const PLAYER_POSTION_START = { _X: 5, X_: 5, _Y: 5, Y_: 5 };
 const PLAYER_WIDTH = 60;
 const PLAYER_HEIGHT = 60;

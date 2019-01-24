@@ -1,20 +1,19 @@
-
 let playerReady = false;
 let playerImage = new Image();
 playerImage.onload = function () {
-	playerReady = true;
+    playerReady = true;
 };
-playerImage.src = "./images/nave_2.png";
+playerImage.src = "images/nave_2.png";
 
 
 let Player = {
     name: 'Yesley',
-    speed_move: PLAYER_SPEED_MOVE * 100,
+    speed_move: PLAYER_SPEED_MOVE,
     x: 0,
     y: 0,
     img: playerImage,
-    width : PLAYER_WIDTH,
-    height : PLAYER_HEIGHT
+    width: PLAYER_WIDTH,
+    height: PLAYER_HEIGHT
 }
 
 // keyboard controls

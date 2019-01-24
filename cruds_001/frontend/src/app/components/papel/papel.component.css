@@ -1,11 +1,23 @@
-.menu-principal{
-    width: 250px;
-    height: 100vh;
+table, tr td {
+
 }
 
-@media only screen and (max-width: 400px) {
-    .menu-principal{
-        width: 75%;
-        height: 100vh;
-    }
-  }
+tbody {
+  display: block;
+  height: 100px;
+  overflow: auto;
+}
+
+thead, tbody tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+thead {
+  width: calc(100% - 1em)
+}
+
+table {
+  width: 400px;
+}

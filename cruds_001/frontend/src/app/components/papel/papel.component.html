@@ -1,45 +1,24 @@
-<div class="menu-principal {{menuFlexItems.content.classes}}">
-    <div class="accordion {{menuFlexItems.body.classes}}" id="accordionExample">
-
-        <ng-template ngFor let-menu [ngForOf]="menuFlexOptions" let-indexMenu="index">
-
-            <div class="{{menuFlexItems.menu.classes}}" id="headingMenu{{menu.nome}}" data-toggle="collapse"
-                [attr.data-target]="'#collapseMenu' + indexMenu" aria-expanded="false" [attr.aria-controls]="'collapseMenu' + indexMenu">
-                Menu {{menu.nome}}
-            </div>
-
-            <div id="collapseMenu{{indexMenu}}" class="collapse " [attr.aria-labelledby]="'headingMenu' + indexMenu"
-                data-parent="#accordionExample">
-                <div class="d-flex flex-column">
-
-                    <ng-template ngFor let-subMenu [ngForOf]="menu.items" let-indexSub="index">
-
-                        <div class="{{menuFlexItems.submenu.classes}}" id="headingSub{{indexSub}}"
-                            data-toggle="collapse" [attr.data-target]="'#collapseSub' + indexSub" aria-expanded="false"
-                            [attr.aria-controls]="'collapseSub' + indexSub">
-                            Sub Menu {{subMenu.nome}}
-                        </div>
-
-                        <div id="collapseSub{{indexSub}}" class="collapse" [attr.aria-labelledby]="'headingSub' + indexSub"
-                            [attr.data-parent]="'#collapseMenu'+indexMenu">
-                            <div class="d-flex flex-column">
-
-                                <ng-template ngFor let-underSubMenu [ngForOf]="subMenu.items" let-i="index">
-
-                                    <div class="{{menuFlexItems.undermenu.classes}}" id="heading{{underSubMenu.nome}}"
-                                        data-toggle="collapse" [attr.data-target]="'#collapse' + underSubMenu.nome"
-                                        aria-expanded="false" [attr.aria-controls]="'collapse' + underSubMenu.nome">
-                                        Under Sub Menu {{underSubMenu.nome}}
-                                    </div>
-
-                                </ng-template>
-                            </div>
-                        </div>
-                    </ng-template>
-
-                </div>
-            </div>
-        </ng-template>
-
-    </div>
+<div class="container">
+  <table class="table table-bordered table-hover">
+    <thead>
+    <tr>
+      <td>Name</td>
+      <td>phone</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>AAAA</td>
+      <td>323232</td>
+    </tr>
+    <tr>
+      <td>BBBBB</td>
+      <td>323232</td>
+    </tr>
+    <tr>
+      <td>CCCCC</td>
+      <td>3435656</td>
+    </tr>
+    </tbody>
+  </table>
 </div>
