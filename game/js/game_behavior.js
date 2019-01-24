@@ -1,50 +1,54 @@
-class Game {
-    constructor(canvas) {
-        canvas.width = POSITION.X_;
-        canvas.height = POSITION.Y_;
-        this._width = POSITION.X_;
-        this._height = POSITION.Y_;
-        this._ctx = canvas.getContext('2d');
-        this._player = new Player(this._ctx, PLAYER_POSTION_START.X_, PLAYER_POSTION_START.Y_);
-    }
 
-    play() {
-        this._clear(); 
-        this._drawBorder(); 
-        this._player.draw(); 
+let bgReady = false;
+let bgImage = new Image();
+bgImage.onload = function () {
+    bgReady = true;
+};
+bgImage.src = "./images/bg_space.gif";
+let Background = {
+    img: bgImage,
+    width: POSITION.X_,
+    height: POSITION.Y_
+};
 
-        if (this._checkState()) { 
-            requestAnimationFrame(this.play.bind(this)); 
-        } else {
-            this._playLose();
+
+let reset = (() => {
+    Player.x = (POSITION.X_ / 2) - (PLAYER_WIDTH /2);
+    Player.y = POSITION.Y_ - 100;
+
+});
+
+let update = ((modifier) => {
+    if (87 in keysDown) { // up
+        if(Player.y - Player.speed_move * modifier > POSITION._Y){
+            Player.y -= Player.speed_move * modifier;
         }
+        console.log(Player.y);
+    }
+    if (83 in keysDown) { // down
+        Player.y += Player.speed_move * modifier;
+    }
+    if (65 in keysDown) { // left
+        Player.x -= Player.speed_move * modifier;
+    }
+    if (68 in keysDown) { // right
+        Player.x += Player.speed_move * modifier;
+    }
+});
+
+let render = (() => {
+
+    if (bgReady) {
+        
+        ctx.drawImage(Background.img, 0, 0, Background.width, Background.height);
     }
 
-    _checkState() {
-        let borders = this._player.getBorders();
-        return (borders.xMin >= 0 &&
-            borders.xMax <= this._width &&
-            borders.yMin >= 0 &&
-            borders.yMax <= this._height);
+    if (playerReady) {
+        ctx.drawImage(Player.img, //Imagem
+            Player.x,  // x inicial
+            Player.y, // y inicial
+            Player.width,  //largura
+            Player.height); // altura
     }
 
-    _playLose() {
-        this._ctx.beginPath();
-        this._ctx.font = '20px serif';
-        this._ctx.fillStyle = 'red';
-        this._ctx.fillText("You lose!", this._width / 2, this._height / 2);
-    }
-
-    _drawBorder() {
-        this._ctx.beginPath();
-        this._ctx.rect(0, 0, this._width, this._height);
-        this._ctx.stroke();
-    }
-
-    _clear() {
-        this._ctx.clearRect(0, 0, this._width, this._height);
-    }
-}
-
-var game = new Game(document.getElementById('ctx'));
-game.play();
+});
