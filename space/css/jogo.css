@@ -1,0 +1,22 @@
+body{
+    margin: 0%;
+    padding: 0%;
+}
+
+.container-jogo-principal{
+    width: 100%;
+    height: 100vh;
+    min-height: 600px;
+    top: 0;
+}
+
+.container-jogo{
+    width: 702px;
+    height: 552px;
+    margin: 0 auto;
+}
+
+.canva-game{
+    width: 100%;
+    height: 500px;
+}
