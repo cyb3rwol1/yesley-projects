@@ -6,9 +6,9 @@
     <div class="card-body">
       <ng-template ngFor let-sistema [ngForOf]="sistemas" let-i="index" [ngForTrackBy]="trackByFn">
 
-        <a href="#" class="btn botoes-sistemas m-2 p-0 text-white">
-          <div class="container-fluid">
-            <div class="container-fluid mt-2">
+        <a href="{{sistema.url}}" target="{{sistema.target}}" class="btn botoes-sistemas m-2 p-0 text-white">
+          <div class="container-fluid p-0">
+            <div class="container-fluid mt-2 p-0">
               {{sistema.name}}
             </div>
             <div class="container-fluid h-75 botoes-sistemas-icon">

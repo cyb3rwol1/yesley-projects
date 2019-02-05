@@ -13,16 +13,24 @@ export class SistemasComponent implements OnInit {
     this.sistemas = [
       {
         icon: 'fas fa-at',
-        name: 'E-mail'
+        name: 'Acesso',
+        url: 'javascript:void(0)',
+        target :'_self'
       }, {
         icon: 'fab fa-algolia',
-        name: 'Fotografias'
+        name: 'Google Fotos',
+        url: 'https://www.google.com/intl/pt-BR/photos/about/',
+        target :'_blank'
       }, {
         icon: 'fab fa-apple',
-        name: 'Apple'
+        name: 'Apple',
+        url: 'https://www.apple.com',
+        target :'_blank'
       }, {
         icon: 'fas fa-shopping-cart',
-        name: 'Marketplace'
+        name: 'Marketplace',
+        url: 'https://marketplace-dev.redetendencia.com.br/',
+        target :'_blank'
       }
     ]
   }
