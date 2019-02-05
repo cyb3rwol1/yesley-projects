@@ -1,0 +1,35 @@
+
+.botoes-sistemas{
+    width: 15%;
+    height: 100px;
+    background-color: rgba(30, 163, 240, 0.5) !important;
+}
+
+.botoes-sistemas:hover{
+    background-color: rgba(30, 163, 240, 0.671) !important;
+}
+
+.botoes-sistemas:active{
+    background-color: rgba(30, 163, 240, 0.342) !important;
+}
+
+.botoes-sistemas-icon{
+    font-size: 40px;
+}
+
+
+
+@media screen and (max-width: 600px) {
+    .container-fluid-sistemas{
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .botoes-sistemas{
+        width: 45%;
+    }
+}
+  
+@media screen and (max-width: 992px) {
+
+}

@@ -1,0 +1,68 @@
+.container{
+    height: 100%;
+    align-content: center;
+}
+
+.card-autenticacao {
+    width: 400px;
+    height: 370px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.input-group-prepend-autenticacao {
+    background-color: whitesmoke;
+    border-top-left-radius: 10%;
+    border-bottom-left-radius: 10%;
+}
+
+.input-group-prepend-autenticacao span{
+    width: 30px;
+    height: 100%;
+    line-height: 35px;
+    border-top-left-radius: 10%;
+    border-bottom-left-radius: 10%;
+    text-align: center;
+    border:0 !important;
+    background-color: rgba(0,0,0,0.5) !important;
+}
+
+.input-autenticacao:focus{
+    outline: 0 0 0 0  !important;
+    box-shadow: 0 0 0 0 !important;
+}
+
+.remember{
+    color: white;
+}
+
+.remember input
+{
+    width: 20px;
+    height: 20px;
+    margin-left: 15px;
+    margin-right: 5px;
+}
+
+@media screen and (max-width: 600px) {
+    .container-image{
+        position: fixed !important;
+        top: 0 !important;
+        width: 100% !important;
+    }
+
+    .container-login{
+        width: 100% !important;
+        
+    }
+
+    .card-autenticacao {
+        margin-top: 0px !important;
+    }
+  }
+  
+@media screen and (max-width: 992px) {
+    .container-image{
+        width: 50%;
+    }
+}

@@ -1,0 +1,23 @@
+<div class="container-fluid pt-lg-3 vh-100 bg-white text-white container-fluid-sistemas">
+  <div class="container-fluid p-0 bg-dark-transparent ">
+    <div class="card-header">
+      <h5 class="card-title">Olá Yesley Gonçalves Miranda, escolha a aplicação que você deseja acessar</h5>
+    </div>
+    <div class="card-body">
+      <ng-template ngFor let-sistema [ngForOf]="sistemas" let-i="index" [ngForTrackBy]="trackByFn">
+
+        <a href="#" class="btn botoes-sistemas m-2 p-0 text-white">
+          <div class="container-fluid">
+            <div class="container-fluid mt-2">
+              {{sistema.name}}
+            </div>
+            <div class="container-fluid h-75 botoes-sistemas-icon">
+              <i [attr.class]="sistema.icon"></i>
+            </div>
+          </div>
+        </a>
+
+      </ng-template>
+    </div>
+  </div>
+</div>
