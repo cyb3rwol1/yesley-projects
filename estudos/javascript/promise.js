@@ -42,7 +42,7 @@ let getDateTimeNow = () => {
         currentdate.getFullYear() + " " +
         currentdate.getHours() + ":" +
         currentdate.getMinutes() + ":" +
-        currentdate.getSeconds()+ ":" +
+        currentdate.getSeconds() + ":" +
         currentdate.getMilliseconds();
 
     return datetime;
@@ -53,12 +53,21 @@ Executa as funçoes em ondem e síncronas.
 Resolve() encerra com sucesso 
 Reject() cai direto no catch, tendo a possibilidade de retornar o erro
 */
-funcaoStart()
-    .then(() => funcaoA())
-    .then(() => funcaoB())
-    .then((result) => {
-        console.log(result)
-    })
-    .catch((err) => {
-        console.log(err);
-    });
+
+function valorando() {
+    return funcaoStart()
+        .then(() => funcaoA())
+        .then(() => funcaoB())
+        .then(() => "Valor que está vindo")
+        .catch((err) => console.log(err));
+}
+
+function mostaValor() {
+    let valor;
+    
+    valorando()
+        .then((result) => valor = result);
+}
+
+
+mostaValor();
