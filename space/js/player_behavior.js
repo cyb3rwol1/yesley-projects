@@ -5,10 +5,10 @@ playerImage.onload = function () {
 };
 playerImage.src = "images/nave_2.png";
 
-
 let Player = {
     name: 'Yesley',
     speed_move: PLAYER_SPEED_MOVE,
+    speed_fire: 0,
     x: 0,
     y: 0,
     img: playerImage,
