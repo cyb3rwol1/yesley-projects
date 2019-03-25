@@ -3,6 +3,7 @@ const morgan = require('morgan');
 const cors = require('cors');
 const app = express();
 
+// Chama e start database
 const { mongoose } = require('./database');
 
 //Settings
@@ -15,6 +16,7 @@ app.use(morgan('[:date[clf]] request :method ":url" status: :status - :response-
 
 // Para identificar JSON nas requisições
 app.use(express.json());
+
 // Liberar acesso de outros servidores
 app.use(cors({ origin: 'http://localhost:4200' }));
 

@@ -12,7 +12,7 @@ service.getUsuarios = (req, res) => {
             Usuario.find({ _id: { $in: JSON.parse(req.query.codigo) } })
             .exec()
             .then((retorno) => {
-                res.status(200).json(retorno == "" ? Mensageria.s0000() : retorno)
+                res.status(200).json(retorno === '' ? Mensageria.s0000() : retorno)
             })
             .catch((err) => {
                 Mensageria.s0008(err);
@@ -22,14 +22,14 @@ service.getUsuarios = (req, res) => {
         .catch((err)=> {
             res.status(400).json(Mensageria.s0007('codigo'));
         });
-}
+};
 
 service.getAllUsuarios = (req, res) => {
 
     Usuario.find()
         .exec()
         .then((retorno) => {
-            if (retorno == "") {
+            if (retorno === '') {
                 res.status(200).json(Mensageria.s0000())
             } else {
                 res.status(200).json(retorno)
@@ -40,7 +40,7 @@ service.getAllUsuarios = (req, res) => {
             res.status(500).json(Mensageria.s9999());
         })
 
-}
+};
 
 service.createUsuario = (req, res) => {
 
@@ -53,7 +53,7 @@ service.createUsuario = (req, res) => {
             console.error(err);
             res.status(400).json(Mensageria.s0006(err.errors));
         });
-}
+};
 
 service.alterUsuario = (req, res) => {
 
@@ -71,7 +71,7 @@ service.alterUsuario = (req, res) => {
             console.error(err);
             res.status(400).json(Mensageria.s0006(err.errors));
         });
-}
+};
 
 service.deleteUsuario = async (req, res) => {
     const { id } = req.params;
@@ -82,6 +82,6 @@ service.deleteUsuario = async (req, res) => {
 
     await Usuario.findOneAndDelete({ "_id": id });
     res.status(200).json(Mensageria.s0005());
-}
+};
 
 module.exports = service;

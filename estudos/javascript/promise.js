@@ -8,7 +8,7 @@ let funcaoStart = () => {
 
 let funcaoA = () => {
     return new Promise((resolve, reject) => {
-
+        console.log('cheguei aqui');
         // Aqui executa o rest A
         if (1 == 1) {
             setTimeout(function () {
@@ -46,7 +46,7 @@ let getDateTimeNow = () => {
         currentdate.getMilliseconds();
 
     return datetime;
-}
+};
 
 /*
 Executa as funçoes em ondem e síncronas.

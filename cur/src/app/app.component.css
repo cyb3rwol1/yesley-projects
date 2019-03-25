@@ -1,0 +1,32 @@
+.container-cur {
+  width: 874px;
+  height: 1240px;
+  top: 0;
+  position: fixed;
+}
+
+.botao {
+  left: 50%;
+  position: fixed;
+  padding-right: 20px;
+  padding-top: 20px;
+}
+
+.container-image-user {
+  width: 220px;
+  height: 220px;
+}
+
+@media print {
+
+  body, .botao {
+    display: none;
+  }
+
+  .container-cur {
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    position: fixed;
+  }
+}
